@@ -20,18 +20,26 @@ const PatientItem = ({name, gender, age, url, active}:{name:string, gender:strin
 const PatientsList = ({list, current}:{current:string, list:{ age: number, name: string, gender: string, url:string }[]}) => {
 console.log(current, 'current')
   return (
-    <div className={` bg-white flex flex-col items-center rounded-2xl min-w-[367px] py-5 h-full max-h-[92vh]`}>
-        <p className='px-5 text-2xl/[33px] font-extrabold w-full justify-start'>Patients</p>
-        <div className='mt-10 overflow-y-auto w-full custom-scrollbar'>
-            {list.map((item, index)=>(
-                <React.Fragment key={index}>
-                    {/* the patience has no id that i could reference to, so i used the name to select the specific patience*/}
-                    <PatientItem name={item.name} gender={item.gender} age={item.age} url={item.url} active={item.name === current}/>
-                </React.Fragment>
-            ))}            
-                </div>
-        </div>
-  )
+    <div className="bg-white flex flex-col items-center rounded-2xl min-w-[367px] py-5 flex-1 max-h-[114vh]">
+      <p className="px-5 text-2xl/[33px] font-extrabold w-full justify-start">
+        Patients
+      </p>
+      <div className="mt-10 overflow-y-auto w-full custom-scrollbar">
+        {list.map((item, index) => (
+          <React.Fragment key={index}>
+            {/* the patience has no id that i could reference to, so i used the name to select the specific patience*/}
+            <PatientItem
+              name={item.name}
+              gender={item.gender}
+              age={item.age}
+              url={item.url}
+              active={item.name === current}
+            />
+          </React.Fragment>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default PatientsList

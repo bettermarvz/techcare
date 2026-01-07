@@ -50,30 +50,48 @@ const LogoContainer = () => <div>
     <Image alt="Company Logo" src='/TestLogo.svg' height={48} width={211}/>
 </div>
 
-const ProfileContainer = ({name, position, url}:{name: string, position: string, url: string}) => <div className='flex gap-3 '>
-    <div className='flex gap-2'><Image alt="Profile Image" src={url} height={44} width={44} className='rounded-full'/>
-        <div className='flex flex-col text-sm'>
-            <p className='font-bold text-[#072635]'>{name}</p>
-            <p className='text-[#707070]'>{position}</p>
-        </div>
+const ProfileContainer = ({
+  name,
+  position,
+}: {
+  name: string;
+  position: string;
+}) => (
+  <div className="flex gap-3 ">
+    <div className="flex gap-2">
+      <div className="flex flex-col text-sm">
+        <p className="font-bold text-[#072635]">{name}</p>
+        <p className="text-[#707070]">{position}</p>
+      </div>
     </div>
-    <div className='w-[1px] bg-[#EDEDED]'></div>
-    <div className='flex gap-3 items-center'>
-    <Link href='#'>
-        <Image alt="Settings Icon" src='/icon/settings_FILL0_wght300_GRAD0_opsz24.svg' height={24} width={24}/>
-    </Link>
-    <Link href='#'>
-        <Image alt="More Actions Icon" src='/icon/more_vert_FILL0_wght300_GRAD0_opsz24.svg' height={18} width={4}/>
-    </Link>
+    <div className="w-[1px] bg-[#EDEDED]"></div>
+    <div className="flex gap-3 items-center">
+      <Link href="#">
+        <Image
+          alt="Settings Icon"
+          src="/icon/settings_FILL0_wght300_GRAD0_opsz24.svg"
+          height={24}
+          width={24}
+        />
+      </Link>
+      <Link href="#">
+        <Image
+          alt="More Actions Icon"
+          src="/icon/more_vert_FILL0_wght300_GRAD0_opsz24.svg"
+          height={18}
+          width={4}
+        />
+      </Link>
     </div>
-</div>
+  </div>
+);
 
 const Navbar = () => {
   return (
     <section className='h-[72px] rounded-full bg-white flex justify-between items-center px-8'>
         <LogoContainer/>
         <NavLink/>
-        <ProfileContainer name='Dr. Jose Simmons' position='General Practitioner' url='/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc.png'/>
+        <ProfileContainer name='Dr. Jose Simmons' position='General Practitioner'/>
     </section>
   )
 }

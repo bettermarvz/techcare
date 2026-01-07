@@ -4,10 +4,10 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'fedskillstest.ct.digital',
-        port: '',
-        pathname: '/**', // allow all paths
+        protocol: "https",
+        hostname: "fedskillstest.ct.digital",
+        port: "",
+        pathname: "/**", // allow all paths
       },
     ],
   },
