@@ -22,8 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.className} max-w-[1600px] mx-auto py-[18px]`}>
-          <Navbar />
+        className={`${manrope.className} max-w-[1600px] mx-auto py-[18px] text-[#072635]`}
+      >
+        <Navbar />
         <main className=" py-[18px]">{children}</main>
       </body>
     </html>
